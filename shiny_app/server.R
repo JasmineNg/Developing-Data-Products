@@ -1,9 +1,12 @@
 library(shiny)
+library(rattle)
 
 palette(c("#FF4081", "#3D5AFE", "#00E5FF", "#76FF03",
           "#FFEA00", "#FFFF33", "#A65628", "#F781BF", "#E040FB"))
 
 shinyServer(function(input, output, session) {
+        
+        wine <- read.csv("wine.csv")
         
         # Combine the selected variables into a new data frame
         wine$Type <- as.numeric(wine$Type)
